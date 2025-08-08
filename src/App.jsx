@@ -18,20 +18,11 @@ export const App = () => {
       <h1 className="title">
         {`Selected tab is ${tabs.find(tab => tab.id === activeTabId).title || tabs[0].title}`}
       </h1>
-
-      <div data-cy="TabsComponent">
-        <div className="tabs is-boxed">
-          <Tabs
-            tabs={tabs}
-            onTabSelected={setActiveTabId}
-            activeTabId={activeTabId}
-          />
-        </div>
-
-        <div className="block" data-cy="TabContent">
-          {tabs.find(tab => tab.id === activeTabId).content}
-        </div>
-      </div>
+      <Tabs
+        tabs={tabs}
+        onTabSelected={setActiveTabId}
+        activeTabId={activeTabId}
+      />
     </div>
   );
 };
